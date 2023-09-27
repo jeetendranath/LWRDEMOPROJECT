@@ -1,0 +1,87 @@
+.c-container{
+    background-color: black;
+}
+
+.store-logo{
+    height:90px;
+    width:auto;
+}
+
+.social-logo{
+    height: 37px;
+    width: 37px;
+}
+
+.social-logo-youtube{
+    height: 50px;
+    width: 50px;
+}
+
+/* .slds-grid{
+    align-items: center;
+} */
+
+.button-style{
+    --sds-c-button-text-color: white;
+    --sds-c-button-text-color-hover:rgb(225, 222, 222);
+}	
+
+.padding-company-info{
+    padding-left: 10px;
+}
+
+.store-details{
+    color: white;
+    font-size: small;
+    text-align: center;
+}
+
+.store-details-copyright{
+    font-size: medium;
+    color: white;
+    text-align: center;
+}
+
+.custom-box{
+    display: grid;
+    align-content: center;
+}
+
+
+.required:after {
+    content:"*";
+    color: red;
+}
+.d-flex{
+    display: flex;
+}
+.fd-column{
+    flex-direction: column;
+}
+
+.fd-row{
+    flex-direction: row;
+}
+
+.modal-style{
+    width: 50%;
+}
+
+.spinner-container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999; /* Adjust the z-index value if necessary */
+}
+
+.register-button{
+    --sds-c-button-neutral-color-background: black;
+    --sds-c-button-text-color: white;
+    --sds-c-button-text-color-hover: rgb(225, 222, 222);
+    
+}
+
+.model-div-style{
+    
+}

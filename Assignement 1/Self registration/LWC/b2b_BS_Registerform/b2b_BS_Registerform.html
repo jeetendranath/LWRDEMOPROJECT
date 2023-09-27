@@ -1,0 +1,63 @@
+<template>
+    <h2 class="heading slds-p-around_medium">{labels.userRegistration}</h2>
+    <div class="container">
+        <template if:true={isLoading}>
+            <lightning-spinner class="spinner-container" alternative-text="Loading..." variant="brand">
+            </lightning-spinner>
+            <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+        </template>
+            
+            <div class="slds-p-around_x-large custom-card">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2 ">
+                        <label class="input-labels required">{labels.contactFirstName}</label>
+                        <lightning-input  class="validate" variant="label-hidden" data-id="firstName" value={firstName} onchange={handleRegisterChange} required></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <label class="input-labels required">{labels.contactLastname}</label>
+                        <lightning-input  class="validate" variant="label-hidden" data-id="lastName" value={lastName} onchange={handleRegisterChange} required></lightning-input>
+                    </div>
+                  </div>
+                  <label class="input-labels required">{labels.contactPhone}</label>
+                  <lightning-input type="tel" class="validate" variant="label-hidden" data-id="phone" value={phone} onchange={handleRegisterChange} required></lightning-input>
+
+                  <label class="input-labels required">{labels.contactEmail}</label>
+                  <lightning-input  type="email" class="validate" variant="label-hidden" data-id="email" value={email} onchange={handleRegisterChange} required></lightning-input>
+
+                  <label class="input-labels required">{labels.password}</label>
+                  <lightning-input  type='Password' class="validate" variant="label-hidden" data-id="password" value={password} onchange={handleRegisterChange} required></lightning-input>
+
+                  <div class="slds-m-top_small">
+                    <div class="slds-grid slds-gutters password-style">
+                        <div class="slds-col slds-size_2-of-3 ">
+                            <div class={passwordStrengthColor}></div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-3 ">
+                            <div class={textStyle}>{strengthText}</div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="slds-m-top_small">
+                    <label class="input-labels slds-m-top_small required">{labels.confirmPassword}</label>
+                    <lightning-input type='Password' class="validate" variant="label-hidden" data-id="confirmpassword" value={confirmPassword} aria-describedby="form-error-01" aria-invalid="true" onblur={handleRegisterChange} required></lightning-input>
+                    <template if:true={showError}>
+                      <div class="slds-form-element__help error-mssg" id="form-error-01">{error}</div>
+                  </template>
+
+                  </div>
+                 
+                <div class="slds-m-top_medium ">
+                    <div class="slds-m-around_medium">
+                        <lightning-button class="register-button slds-align_absolute-center" varient="neutral" label={labels.register} onclick={handleRegistration}></lightning-button>
+                    </div>
+                    <!-- <div class="slds-m-around_medium">
+                        <lightning-button variant="base" label={labels.alreadyAMember} title={labels.alreadyAMember} onclick={handleLoginIn} class="slds-m-left_medium slds-align_absolute-center button-style"></lightning-button>
+                    </div> -->
+
+                </div>
+            </div>
+
+    </div>
+    
+</template>

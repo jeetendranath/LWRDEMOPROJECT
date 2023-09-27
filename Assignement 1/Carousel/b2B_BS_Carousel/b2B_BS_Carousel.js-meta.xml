@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <description>Bicycle stop carousel</description>
+    <masterLabel>Bicycle stop carousel</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property 
+                label="Carousel 1 URL" 
+                name="carouseloneurl" 
+                type="String"
+                default="https://training2021org1--jitendra2.sandbox.my.site.com/bicyclestop"/>
+            <property 
+                label="Carousel 2 URL" 
+                name="carouseltwourl" 
+                type="String"
+                default="https://training2021org1--jitendra2.sandbox.my.site.com/bicyclestop"/>
+            <property 
+                label="Carousel 3 URL" 
+                name="carouselthreeurl" 
+                type="String"
+                default="https://training2021org1--jitendra2.sandbox.my.site.com/bicyclestop"/>
+        </targetConfig>
+      </targetConfigs> 
+</LightningComponentBundle>

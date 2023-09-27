@@ -1,0 +1,114 @@
+.container {
+    display: flex;
+    justify-content: center; /* Center the card horizontally */
+    align-items: center; /* Center the card vertically */
+}
+
+.custom-card {
+    /* width: 50%;
+    max-width: 600px; /* You can adjust the maximum width as needed */
+    /* box-shadow: 4px 8px 16px 0px #1B226329;
+    background: rgb(225, 222, 222);
+    border-radius: 3%; */ 
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 4px 8px 16px 0px #1B226329;
+    background-color: rgba(0,0,0,0.5);
+    /* background: rgb(225, 222, 222); */
+    border-radius: 3%;
+    /* opacity: 48%; */
+    color: white;
+
+}
+
+.heading{
+    font-size: x-large;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+}
+
+.required:after {
+    content:"*";
+    color: red;
+}
+.d-flex{
+    display: flex;
+}
+.fd-column{
+    flex-direction: column;
+}
+
+.fd-row{
+    flex-direction: row;
+}
+
+.register-button{
+    --sds-c-button-neutral-color-background: black;
+    --sds-c-button-text-color: white;
+
+}
+
+.error-mssg{
+    color: red;
+}
+
+.progress-bar {
+    width: 100%; /* Adjust the width as needed */
+}
+
+.button-style{
+    --sds-c-button-text-color: black;
+}	
+
+
+
+.red-color {
+    width: 33%; /* Adjust the width as needed */
+    height: 4px; /* Adjust the height as needed */
+    background-color: red; /* Change the color as needed */
+}
+
+.text-red{
+    color: red;
+    font-weight: 600;
+
+}
+.text-yellow{
+    color: yellow;
+    font-weight: 600;
+
+}
+.text-green{
+    color: green;
+    font-weight: 600;
+
+}
+
+.yellow-color {
+    width: 66%; /* Adjust the width as needed */
+    height: 4px; /* Adjust the height as needed */
+    background-color: yellow; /* Change the color as needed */
+    color:yellow;
+}
+
+.green-color {
+    width: 100%; /* Adjust the width as needed */
+    height: 4px; /* Adjust the height as needed */
+    background-color: green; /* Change the color as needed */
+    color:green;
+}
+.spinner-container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999; /* Adjust the z-index value if necessary */
+}
+
+.password-style{
+    display: flex;
+    align-items: center;
+}
+
+

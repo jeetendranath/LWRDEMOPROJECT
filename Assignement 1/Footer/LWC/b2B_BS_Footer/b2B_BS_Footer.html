@@ -1,0 +1,151 @@
+<template>
+    <template if:true={isLoading}>
+        <lightning-spinner class="spinner-container" alternative-text="Loading..." variant="brand">
+        </lightning-spinner>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </template>
+    <div class="c-container">
+        <lightning-layout vertical-align="stretch" multiple-rows="true" class="large">
+            <lightning-layout-item flexibility="auto" padding="around-small" class="custom-box">
+                <div class="slds-align_absolute-center">
+                    <img src={bicyclestoplogo}  class="store-logo" alt="bicyclestop logo" />
+                </div>
+                <div class="store-details slds-align_absolute-center">
+                    <p>
+                        {labels.bicycleStopName}<br>
+                        {labels.email}<br>
+                        {labels.phone}<br>
+                        <b>{labels.copyRight}</b>
+                    </p>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto" padding="around-small" class="custom-box">
+                <div class="store-details slds-align_absolute-center">
+                    <p>
+                        {labels.social}
+                    </p>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_2-of-7 slds-align_absolute-center">
+                      
+                    </div>
+                    <div class="slds-col slds-size_1-of-7 slds-align_absolute-center">
+                        <a href={labels.youtube}>
+                            <img src={youtube}   class="social-logo-youtube" alt="youtube logo" />
+                        </a>
+                       
+                    </div>
+                    <div class="slds-col slds-size_1-of-7 slds-align_absolute-center">
+                        <a href={labels.instagram}>
+                            <img src={instagram} class="social-logo" alt="instagram logo" />
+                        </a>
+                        
+                    </div>
+                    <div class="slds-col slds-size_1-of-7 slds-align_absolute-center">
+                        <a href={labels.facebook}>
+                            <img src={facebook}  class="social-logo" alt="facebook logo" />
+                        </a>
+                    </div>
+                    <div class="slds-col slds-size_2-of-7 slds-align_absolute-center">
+                      
+                    </div>
+                  </div>
+                
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto" padding="around-small" class="custom-box ">
+                <div class="store-details slds-align_absolute-center">
+                    <p class="padding-company-info">
+                        {labels.companyInfo}
+                    </p>
+                </div>
+                <div class="slds-align_absolute-center">
+                    <lightning-button variant="base" label={labels.contactUs} title={labels.contactUs} onclick={registerModelOpen} class="slds-m-left_x-small button-style"></lightning-button>
+                </div>
+                <div class="slds-align_absolute-center">
+                    <lightning-button variant="base" label={labels.aboutUs} title={labels.aboutUs} onclick={handleAboutUs} class="slds-m-left_x-small button-style"></lightning-button>
+                </div>
+                
+                <div class="slds-align_absolute-center">
+                    <lightning-button variant="base" label={labels.privacyPolicy} title={labels.privacyPolicy} onclick={handlePrivacyPolicy} class="slds-m-left_x-small button-style"></lightning-button>
+                </div>
+                <div class="slds-align_absolute-center">
+                    <lightning-button variant="base" label={labels.tnc} title={labels.tnc} onclick={handletnc} class="slds-m-left_medium button-style"></lightning-button>
+
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+    <template if:true={isRegisterModelOpen}>
+        <div class="model-div-style">
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal modal-style slds-align_absolute-center slds-fade-in-open slds-modal_medium">
+                <div class="slds-modal__container">
+    
+                <div class="slds-modal__header">
+                <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{labels.contactUs}</h1>
+                </div>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <div class="main-container slds-p-around_medium slds-grid slds-grid_vertical slds-gutters">
+    
+                        <label class="input-labels required">{labels.comments}</label>
+                        <lightning-textarea  class="validate" variant="label-hidden" value={comment} placeholder={labels.commentsPlaceholder} onchange={handleComment} required></lightning-textarea>
+
+                        
+                    </div>
+                </div>
+                <div class="slds-modal__footer">
+                    <lightning-button variant="neutral" label={labels.close} onclick={handleClose} class="slds-m-left_x-small"></lightning-button>
+                    <lightning-button class="register-button slds-m-left_x-small" variant="neutral" label={labels.submit} onclick={handleCase} ></lightning-button>
+                </div>
+                </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+
+        </div>
+       
+    </template>
+
+    <template if:true={isGuestModelOpen}>
+        <div>
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal modal-style slds-align_absolute-center slds-fade-in-open slds-modal_medium">
+                <div class="slds-modal__container">
+    
+                    <div class="slds-modal__header">
+                    <h1 id="modal-heading-02" class="slds-modal__title slds-hyphenate">{labels.contactUs}</h1>
+                    </div>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+                        <div class="main-container slds-p-around_medium slds-grid slds-grid_vertical slds-gutters">
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col slds-size_1-of-2 ">
+                                    <label class="input-labels required">{labels.contactFirstName}</label>
+                                    <lightning-input  class="validate" variant="label-hidden" data-id="firstName" value={firstName} placeholder={labels.contactFirstName} onchange={hadleLeadData} required></lightning-input>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2 ">
+                                    <label class="input-labels required">{labels.contactLastname}</label>
+                                    <lightning-input  class="validate" variant="label-hidden" data-id="lastName" value={lastName} placeholder={labels.contactLastname} onchange={hadleLeadData} required></lightning-input>
+                                </div>
+
+                            </div>
+
+                            <label class="input-labels required">{labels.contactEmail}</label>
+                            <lightning-input  class="validate" variant="label-hidden" data-id="email" value={email} placeholder={labels.contactEmail} onchange={hadleLeadData} required></lightning-input>
+
+                            <label class="input-labels required">{labels.companyName}</label>
+                            <lightning-input  class="validate" variant="label-hidden" data-id="companyName" value={companyName} placeholder={labels.companyName} onchange={hadleLeadData} required></lightning-input>
+
+                            <label class="input-labels required">{labels.comments}</label>
+                            <lightning-textarea  class="validate" variant="label-hidden" data-id="comment" value={comment} placeholder={labels.commentsPlaceholder} onchange={hadleLeadData} required></lightning-textarea>
+
+                            
+                        </div>
+                    </div>
+                    <div class="slds-modal__footer">
+                        <lightning-button  variant="neutral" label={labels.close} onclick={handleClose} class="slds-m-left_x-small"></lightning-button>
+                        <lightning-button class="register-button slds-m-left_x-small" variant="neutral" label={labels.submit} onclick={handleLead} ></lightning-button>
+                    </div>
+                </div>
+            </section>
+                <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+        </div>
+    </template> 
+</template>
+
