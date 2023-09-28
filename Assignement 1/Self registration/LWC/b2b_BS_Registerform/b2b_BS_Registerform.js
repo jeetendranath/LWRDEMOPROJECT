@@ -97,7 +97,7 @@ export default class UserRegistration extends NavigationMixin(LightningElement) 
                         this.newUID = result.UserId;
                         // Handle success scenario as needed
                         this.dispatchEvent(new ShowToastEvent({ title: 'Success', message:this.labels.register, variant: 'success' }));
-                        // Redirect to the URL in 'pageRef' if needed
+                        // Redirect to the URL in 'pageRef'
                         window.location.href = result.pageRef;
                     }
                 }      
